@@ -17,3 +17,11 @@ hr {
 .index-center {
     text-align: center;
 }
+
+#thankyouForm {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: #ff0000;
+    margin-top: 50px;
+}
