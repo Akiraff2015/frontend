@@ -1,0 +1,19 @@
+textarea {
+    resize: none;
+}
+
+#characterBoxCount {
+    float:right
+}
+
+.button-group {
+    float: right;
+}
+
+hr {
+    margin-top: 90px;
+}
+
+.index-center {
+    text-align: center;
+}
