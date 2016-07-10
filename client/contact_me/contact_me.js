@@ -1,17 +1,8 @@
 /**
  * Created by user on 2016-07-07.
  */
-//function prepareEventHandlers() {
-//    document.getElementById("contact-form").onsubmit = function () {
-//        console.log("the page have been submitted");
-//    }
-//}
-//
-//window.onload = function () {
-//    prepareEventHandlers();
-//}
 Template.contact_me.events({
-    "click [data-action ='task/submit']": function(e) {
+    "click #submit": function(e) {
         var getEmail = document.getElementById("getEmail");
         var setEmail = getEmail.value;
 
@@ -21,18 +12,26 @@ Template.contact_me.events({
         var getMessage = document.getElementById("getMessage");
         var setMessage = getMessage.value;
 
-        console.log(setEmail);
-        console.log(setName);
-        console.log(setMessage);
+        //Inserts into MongoDB with fields: email, name, message
+        ContactForm.insert({
+            email: setEmail,
+            name: setName,
+            message: setMessage,
+            createdDate: new Date()}
+        );
 
         //Reset all the values.
         document.getElementById("contact-form").reset();
-        document.getElementById("thanksForm").innerHTML = "Thank you for submitting a form";
+        document.getElementById("thanksForm").innerHTML = "Thank you for submitting a form. We will shortly be directing you to homepage.";
+
+        setTimeout(function() {
+            FlowRouter.go("/");
+        }, 3000);
 
         e.preventDefault();
     },
 
-    "click [data-action='task/cancel']": function (e) {
+    "click #cancel": function (e) {
         document.getElementById("contact-form").reset();
         e.preventDefault();
     }

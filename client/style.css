@@ -25,3 +25,37 @@ hr {
     color: #ff0000;
     margin-top: 50px;
 }
+
+.loginBox {
+    width: 50%;
+    margin: 0 auto;
+}
+
+#logout {
+    margin-top:11%;
+}
+
+#user-style {
+    color: white;
+    font-weight: bold;
+}
+
+@media (max-width: 700px) {
+    .loginBox {
+        width: 75%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 500px) {
+    .loginBox {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 768px) {
+    #logout {
+        margin: 10px 15px;
+    }
+}

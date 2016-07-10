@@ -1,0 +1,28 @@
+<template name="table_message">
+    <div class="container">
+        {{#if currentUser}}
+            <h1>Table Message</h1>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                    <th>Remove</th>
+                </tr>
+                </thead>
+
+                {{#each contact_list}}
+                    <tbody>
+                    <th>{{name}}</th>
+                    <th>{{email}}</th>
+                    <th>{{message}}</th>
+                    <th><button class="delete">Delete</button></th>
+                    </tbody>
+                {{/each}}
+            </table>
+            {{else}}
+                <h1>No permission</h1>
+        {{/if}}
+    </div>
+</template>

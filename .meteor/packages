@@ -13,3 +13,5 @@ twbs:bootstrap
 kadira:blaze-layout
 kadira:flow-router
 spacebars
+accounts-password
+accounts-base
