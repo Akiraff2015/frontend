@@ -1,10 +1,42 @@
 <template name="layout">
     {{> Template.dynamic template=top}}
-    {{> Template.dynamic template=main}}
-    {{> Template.dynamic template=footer}}
+    <div class="margin-bs">
+        {{> Template.dynamic template=main}}
+        {{> Template.dynamic template=footer}}
+    </div>
 </template>
 
 <template name="layout1">
     {{> Template.dynamic template=top}}
-    {{> Template.dynamic template=main}}
+    <div class="margin-bs">
+        {{> Template.dynamic template=main}}
+    </div>
+</template>
+
+<template name="user-layout">
+    {{> Template.dynamic template=top}}
+    <div class="margin-bs">
+        {{#if currentUser}}
+            {{> Template.dynamic template=main}}
+
+            {{else}}
+                <div class="container">
+                    <p>Please <a href="/login">login</a>, in order to proceed this action.</p>
+                </div>
+        {{/if}}
+    </div>
+</template>
+
+<template name="admin-layout">
+    {{> Template.dynamic template=top}}
+
+    <div class="container">
+        <div class="margin-bs">
+            {{#if isInRole 'admin'}}
+                {{> Template.dynamic template=main}}
+            {{else}}
+                {{> Template.dynamic template='401'}}
+            {{/if}}
+        </div>
+    </div>
 </template>

@@ -4,11 +4,11 @@
 
 //TODO: Prototype only, don't return TRUE
 ContactForm.allow({
-    'insert': function() {
-        return true;
+    'insert': function(id) {
+        return Roles.usersIsInRole(id, ['admin']);
     },
 
     'remove': function() {
-        return true;
+        return Roles.usersIsInRole(id, ['admin']);
     }
 })

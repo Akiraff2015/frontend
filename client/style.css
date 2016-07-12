@@ -40,10 +40,30 @@ hr {
     font-weight: bold;
 }
 
+.margin-bs{
+    margin-top: 50px;
+}
+
 @media (max-width: 700px) {
     .loginBox {
         width: 75%;
         margin: 0 auto;
+    }
+}
+
+/*MINIMUM SIZE: GOOGLE CHROME*/
+@media (max-width: 373px) {
+    h1 {
+        font-size: 20px;
+        text-align: justify;
+    }
+
+    p {
+        text-align: justify;
+    }
+
+    hr {
+        margin-top: 10px;
     }
 }
 
